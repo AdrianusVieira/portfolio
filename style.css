@@ -10,49 +10,34 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "PressStart2P-Regular", "VT323-Regular", "Quantico-Bold",
-    "Quantico-BoldItalic", "Quantico-Italic", "Quantico-Regular";
+  font-family: "PressStart2P-Regular", "VT323-Regular","Quantico-Regular";
+  background-color: var(--cor-de-fundo);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg fill-opacity='0.96'%3E%3Ccircle fill='%230A0C10' cx='50' cy='0' r='50'/%3E%3Cg fill='%230c0e12' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%230e1014' cx='50' cy='100' r='50'/%3E%3Cg fill='%23101216' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23121418' cx='50' cy='200' r='50'/%3E%3Cg fill='%23131519' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%2315171b' cx='50' cy='300' r='50'/%3E%3Cg fill='%2316181c' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%2317191e' cx='50' cy='400' r='50'/%3E%3Cg fill='%23191b20' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%231a1c21' cx='50' cy='500' r='50'/%3E%3Cg fill='%231b1e23' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%231c1f25' cx='50' cy='600' r='50'/%3E%3Cg fill='%231e2127' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%231f2228' cx='50' cy='700' r='50'/%3E%3Cg fill='%2320242a' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%2322252c' cx='50' cy='800' r='50'/%3E%3Cg fill='%2323272e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%2324282f' cx='50' cy='900' r='50'/%3E%3Cg fill='%23262931' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23272B33' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
+  overflow: auto;
 }
-
-header {
-  background-color: #222;
-  color: white;
-  padding: 20px;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top right, var(--primaria) 0%, var(--cor-de-fundo) 150%);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 30% 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), 0px -3px 3px rgba(255, 255, 255, 0.4);
+  animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-section {
-  padding: 50px;
-}
-
-section:nth-child(even) {
-  background-color: #f1f1f1;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 20px;
+.header-text{
+  font-family: "PressStart2P-Regular";
+  color: var(--branco);
+  font-size: 12px;
+  padding-right: 2%;
+  animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 4s; /* don't forget to set a duration! */
 }
