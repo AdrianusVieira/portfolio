@@ -15,6 +15,9 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg fill-opacity='0.96'%3E%3Ccircle fill='%230A0C10' cx='50' cy='0' r='50'/%3E%3Cg fill='%230c0e12' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%230e1014' cx='50' cy='100' r='50'/%3E%3Cg fill='%23101216' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23121418' cx='50' cy='200' r='50'/%3E%3Cg fill='%23131519' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%2315171b' cx='50' cy='300' r='50'/%3E%3Cg fill='%2316181c' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%2317191e' cx='50' cy='400' r='50'/%3E%3Cg fill='%23191b20' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%231a1c21' cx='50' cy='500' r='50'/%3E%3Cg fill='%231b1e23' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%231c1f25' cx='50' cy='600' r='50'/%3E%3Cg fill='%231e2127' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%231f2228' cx='50' cy='700' r='50'/%3E%3Cg fill='%2320242a' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%2322252c' cx='50' cy='800' r='50'/%3E%3Cg fill='%2323272e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%2324282f' cx='50' cy='900' r='50'/%3E%3Cg fill='%23262931' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23272B33' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 2000px;
 }
 .header {
@@ -43,7 +46,6 @@ body {
   font-size: 12px;
   text-shadow: 0.5px -0.5px 0 #fff, -1px 1px 0 #000;
 }
-
 /* Estilização do header quando o usuário rolar a página */
 .header.scrolled {
   clip-path: inset(0 0 0 0);
@@ -56,4 +58,27 @@ body {
   padding-right: 2%;
   animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 4s; /* don't forget to set a duration! */
+}
+@media (max-width: 1200px) and (min-width: 750px) {
+  .header {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 750px) {
+  .header {
+    justify-content: center;
+    clip-path: inset(0 0 0 0);
+    font-size: 10px;
+  }
+  .header.scrolled{
+    font-size: 11px;
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    display: none;
+  }
+  .header.scrolled{
+    display: none;
+  }
 }
