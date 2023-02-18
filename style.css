@@ -59,6 +59,11 @@ body {
   animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 4s; /* don't forget to set a duration! */
 }
+.header-text:hover{
+  cursor: pointer;
+  color: var(--secundaria);
+  text-shadow: 0.5px -0.5px 0 var(--secundaria), -1px 1px 0 #000;
+}
 @media (max-width: 1200px) and (min-width: 750px) {
   .header {
     justify-content: flex-end;
