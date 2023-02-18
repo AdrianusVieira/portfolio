@@ -30,12 +30,14 @@
       <a class="header-text">HABILIDADES</a>
       <a class="header-text">PROJETOS</a>
     </header>
-    <div class="photo-area"></div>
-    <div class="sobre-text"></div>
+    <div class="first-quadrant">
+      <div class="photo-area"></div>
+      <div class="sobre-text"></div>
+    </div>
     <script>
       window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
-        header.classList.toggle("scrolled", window.scrollY > 0);
+        header.classList.toggle("scrolled", window.scrollY > 2);
       });
     </script>
   </body>
