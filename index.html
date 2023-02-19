@@ -32,7 +32,7 @@
     </header>
     <div class="first-quadrant">
       <div class="photo-quadrant">
-        <div class="photo-area">
+        <div class="photo-area" id="photo-area">
           <img class="photo-perfil" src="./images/foto_perfil.png" />
         </div>
       </div>
@@ -42,6 +42,10 @@
       window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
         header.classList.toggle("scrolled", window.scrollY > 2);
+      });
+      window.addEventListener("scroll", function () {
+        var photoArea = document.getElementById("photo-area")
+        photoArea.classList.toggle("scrolled", window.scrollY > 2)
       });
     </script>
   </body>
