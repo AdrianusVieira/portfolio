@@ -103,12 +103,26 @@ body {
   height: 500px;
   max-width: 100%;
 }
-.sobre-text {
+.sobre-quadrant {
   width: 70%;
 }
-@media (max-width: 1200px) and (min-width: 750px) {
+@media (max-width: 1200px) {
   .header {
     justify-content: flex-end;
+  }
+  .first-quadrant {
+    flex-direction: column;
+  }
+  .photo-quadrant {
+    width: 100%;
+  }
+  .photo-area{
+    clip-path: inset(0 0 0 0);
+    border-right: 0px;
+    align-items: flex-start;
+  }
+  .sobre-quadrant {
+    width: 100%;
   }
 }
 @media (max-width: 750px) {
