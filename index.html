@@ -39,7 +39,7 @@
       <div class="sobre-quadrant">
         <div class="sobre-area" id="sobre-area">
           <a class="sobre-title">Sobre Mim</a>
-          <a class="sobre-text"
+          <a class="sobre-text" id="sobre-text"
             ><p>
               Ola, meu nome é Adrianus Vieira e sou um apaixonado por
               tecnologia!
@@ -90,11 +90,13 @@
     <script>
       window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
-        header.classList.toggle("scrolled", window.scrollY > 2);
+        header.classList.toggle("scrolled", window.scrollY > 80);
         var photoArea = document.getElementById("photo-area");
-        photoArea.classList.toggle("scrolled", window.scrollY > 2);
+        photoArea.classList.toggle("scrolled", window.scrollY > 80);
         var sobreArea = document.getElementById("sobre-area");
-        sobreArea.classList.toggle("scrolled", window.scrollY > 2);
+        sobreArea.classList.toggle("scrolled", window.scrollY > 80);
+        var sobreText = document.getElementById("sobre-text");
+        sobreText.classList.toggle("scrolled", window.scrollY > 80);
       });
     </script>
   </body>
