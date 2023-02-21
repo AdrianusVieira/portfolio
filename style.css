@@ -69,6 +69,21 @@ body {
   display: flex;
   flex-direction: row;
 }
+.first-quadrant.is-visible {
+  display: none;
+}
+#sobre-mim.underline {
+  text-decoration: underline var(--secundaria);
+}
+#experiencia.underline {
+  text-decoration: underline var(--secundaria);
+}
+#habilidades.underline {
+  text-decoration: underline var(--secundaria);
+}
+#projetos.underline {
+  text-decoration: underline var(--secundaria);
+}
 .photo-quadrant {
   display: flex;
   flex-direction: column;
@@ -170,6 +185,33 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.experiencia-quadrant.is-visible {
+  display: none;
+}
+.habilidades-quadrant {
+  width: 100%;
+  padding-top: 80px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.habilidades-quadrant.is-visible {
+  display: none;
+}
+.projetos-quadrant {
+  width: 100%;
+  padding-top: 80px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.projetos-quadrant.is-visible {
+  display: none;
 }
 @media (max-width: 1200px) {
   .header {
