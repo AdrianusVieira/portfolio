@@ -25,12 +25,12 @@
   </head>
   <body>
     <header class="header">
-      <a id="sobre-mim" class="header-text">SOBRE MIM</a>
+      <a id="sobreMim" class="header-text">SOBRE MIM</a>
       <a id="experiencia" class="header-text">EXPERIENCIA</a>
       <a id="habilidades" class="header-text">HABILIDADES</a>
       <a id="projetos" class="header-text">PROJETOS</a>
     </header>
-    <div id="first-quadrant" class="first-quadrant">
+    <div id="firstQuadrant" class="first-quadrant">
       <div class="photo-quadrant">
         <div class="photo-area" id="photo-area">
           <img class="photo-perfil" src="./images/foto_perfil.png" />
@@ -87,13 +87,13 @@
         </div>
       </div>
     </div>
-    <div class="experiencia-quadrant" id="experiencia-quadrant">
+    <div class="experiencia-quadrant" id="experienciaQuadrant">
       <h1>EXPERIENCIA</h1>
     </div>
-    <div class="habilidades-quadrant" id="habilidades-quadrant">
+    <div class="habilidades-quadrant" id="habilidadesQuadrant">
       <h1>HABILDIADES</h1>
     </div>
-    <div class="projetos-quadrant" id="projetos-quadrant">
+    <div class="projetos-quadrant" id="projetosQuadrant">
       <h1>PROJETOS</h1>
     </div>
     <script>
@@ -107,87 +107,58 @@
         var sobreText = document.getElementById("sobre-text");
         sobreText.classList.toggle("scrolled", window.scrollY > 20);
       });
-      const firstQuadrant = document.getElementById("first-quadrant");
+      const firstQuadrant = document.getElementById("firstQuadrant");
       const experienciaQuadrant = document.getElementById(
-        "experiencia-quadrant"
+        "experienciaQuadrant"
       );
       const habilidadesQuadrant = document.getElementById(
-        "habilidades-quadrant"
+        "habilidadesQuadrant"
       );
-      const projetosQuadrant = document.getElementById("projetos-quadrant");
-      const sobreButton = document.getElementById("sobre-mim");
-      const experienciaButton = document.getElementById("experiencia");
-      const habilidadesButton = document.getElementById("habilidades");
-      const projetosButton = document.getElementById("projetos");
-      function resetUnderline(target) {
-        sobreButton.classList.remove("underline");
-        experienciaButton.classList.remove("underline");
-        habilidadesButton.classList.remove("underline");
-        projetosButton.classList.remove("underline");
-        const button = target;
-        button.classList.toggle("underline");
+      const projetosQuadrant = document.getElementById("projetosQuadrant");
+      const sobreMim = document.getElementById("sobreMim");
+      const experiencia = document.getElementById("experiencia");
+      const habilidades = document.getElementById("habilidades");
+      const projetos = document.getElementById("projetos");
+      window.addEventListener("load", function () {
+        experienciaQuadrant.classList.toggle("is-visible");
+        habilidadesQuadrant.classList.toggle("is-visible");
+        projetosQuadrant.classList.toggle("is-visible");
+        sobreMim.classList.add("underline");
+      });
+      function selectTarget(target) {
+        firstQuadrant.classList.add("is-visible");
+        experienciaQuadrant.classList.add("is-visible");
+        habilidadesQuadrant.classList.add("is-visible");
+        projetosQuadrant.classList.add("is-visible");
+        sobreMim.classList.remove("underline");
+        experiencia.classList.remove("underline");
+        habilidades.classList.remove("underline");
+        projetos.classList.remove("underline");
+        if (target === "sobreMim") {
+          sobreMim.classList.add("underline");
+          firstQuadrant.classList.remove("is-visible");
+        } else if (target === "experiencia") {
+          experiencia.classList.add("underline");
+          experienciaQuadrant.classList.remove("is-visible");
+        } else if (target === "habilidades") {
+          habilidades.classList.add("underline");
+          habilidadesQuadrant.classList.remove("is-visible");
+        } else if (target === "projetos") {
+          projetos.classList.add("underline");
+          projetosQuadrant.classList.remove("is-visible");
+        }
       }
-      window.addEventListener("load", function(){
-        experienciaQuadrant.classList.toggle("is-visible")
-        habilidadesQuadrant.classList.toggle("is-visible")
-        projetosQuadrant.classList.toggle("is-visible")
-      })
-      function selectTarget()
-      sobreButton.addEventListener("click", function () {
-        if (firstQuadrant.classList.contains("is-visible")) {
-          firstQuadrant.classList.toggle("is-visible");
-        }
-        if (!experienciaQuadrant.classList.contains("is-visible")) {
-          experienciaQuadrant.classList.toggle("is-visible");
-        }
-        if (!habilidadesQuadrant.classList.contains("is-visible")) {
-          habilidadesQuadrant.classList.toggle("is-visible");
-        }
-        if (!projetosQuadrant.classList.contains("is-visible")) {
-          projetosQuadrant.classList.toggle("is-visible");
-        }
+      sobreMim.addEventListener("click", function () {
+        selectTarget(this.id);
       });
-      experienciaButton.addEventListener("click", function () {
-        if (!firstQuadrant.classList.contains("is-visible")) {
-          firstQuadrant.classList.toggle("is-visible");
-        }
-        if (experienciaQuadrant.classList.contains("is-visible")) {
-          experienciaQuadrant.classList.toggle("is-visible");
-        }
-        if (!habilidadesQuadrant.classList.contains("is-visible")) {
-          habilidadesQuadrant.classList.toggle("is-visible");
-        }
-        if (!projetosQuadrant.classList.contains("is-visible")) {
-          projetosQuadrant.classList.toggle("is-visible");
-        }
+      experiencia.addEventListener("click", function () {
+        selectTarget(this.id);
       });
-      habilidadesButton.addEventListener("click", function () {
-        if (!firstQuadrant.classList.contains("is-visible")) {
-          firstQuadrant.classList.toggle("is-visible");
-        }
-        if (!experienciaQuadrant.classList.contains("is-visible")) {
-          experienciaQuadrant.classList.toggle("is-visible");
-        }
-        if (habilidadesQuadrant.classList.contains("is-visible")) {
-          habilidadesQuadrant.classList.toggle("is-visible");
-        }
-        if (!projetosQuadrant.classList.contains("is-visible")) {
-          projetosQuadrant.classList.toggle("is-visible");
-        }
+      habilidades.addEventListener("click", function () {
+        selectTarget(this.id);
       });
-      projetosButton.addEventListener("click", function () {
-        if (!firstQuadrant.classList.contains("is-visible")) {
-          firstQuadrant.classList.toggle("is-visible");
-        }
-        if (!experienciaQuadrant.classList.contains("is-visible")) {
-          experienciaQuadrant.classList.toggle("is-visible");
-        }
-        if (!habilidadesQuadrant.classList.contains("is-visible")) {
-          habilidadesQuadrant.classList.toggle("is-visible");
-        }
-        if (projetosQuadrant.classList.contains("is-visible")) {
-          projetosQuadrant.classList.toggle("is-visible");
-        }
+      projetos.addEventListener("click", function () {
+        selectTarget(this.id);
       });
     </script>
   </body>

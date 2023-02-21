@@ -72,7 +72,7 @@ body {
 .first-quadrant.is-visible {
   display: none;
 }
-#sobre-mim.underline {
+#sobreMim.underline {
   text-decoration: underline var(--secundaria);
 }
 #experiencia.underline {
