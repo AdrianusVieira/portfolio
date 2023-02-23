@@ -88,11 +88,9 @@
       </div>
     </div>
     <div class="experiencia-quadrant" id="experienciaQuadrant">
-      <h1>EXPERIENCIA</h1>
+      <div class="cpe-quadrant"><img class="logo-cpe" src="./images/logo-cpe.png" /><div id="cpe-area" class="cpe-area"></div>
     </div>
-    <div class="habilidades-quadrant" id="habilidadesQuadrant">
-      <h1>HABILDIADES</h1>
-    </div>
+    <div class="habilidades-quadrant" id="habilidadesQuadrant"></div>
     <div class="projetos-quadrant" id="projetosQuadrant">
       <h1>PROJETOS</h1>
     </div>
@@ -106,6 +104,8 @@
         sobreArea.classList.toggle("scrolled", window.scrollY > 20);
         var sobreText = document.getElementById("sobre-text");
         sobreText.classList.toggle("scrolled", window.scrollY > 20);
+        var cpeArea = document.getElementById("cpe-area")
+        cpeArea.classList.toggle("scrolled", window.scrollY > 20);
       });
       const firstQuadrant = document.getElementById("firstQuadrant");
       const experienciaQuadrant = document.getElementById(
